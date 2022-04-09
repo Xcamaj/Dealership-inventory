@@ -7,6 +7,7 @@ UsedCars.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
@@ -26,6 +27,13 @@ UsedCars.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
@@ -35,5 +43,6 @@ UsedCars.init(
         modelName: 'used'
     }
 );
+
 
 module.exports = UsedCars;
