@@ -1,5 +1,6 @@
+const path = require('path');
 const express = require('express');
-const routes = require('./routes');
+const session = require('express-session');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -20,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // turn on routes
-app.use(routes);
+app.use(session(sess));
 
 app.use(require('./controllers/'));
 
