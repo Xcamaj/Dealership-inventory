@@ -1,6 +1,7 @@
+const seedUser = require('./user-seeds');
 const seedNewCars = require('./new-seeds');
 const seedUsedCars = require('./used-seeds');
-const seedUser = require('./user-seeds');
+
 
 const sequelize = require('../config/connection');
 

@@ -27,16 +27,17 @@ NewCars.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        user_id: {
+        User_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'User',
                 key: 'id'
             }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'new'
