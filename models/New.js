@@ -27,10 +27,11 @@ NewCars.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        User_id: {
+        user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
-                model: 'User',
+                model: 'user',
                 key: 'id'
             }
         }

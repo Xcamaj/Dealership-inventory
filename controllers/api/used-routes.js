@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     attributes: [
         'id',
         'make',
-        'mode',
+        'model',
         'price',
         'type'
     ],
@@ -129,7 +129,7 @@ router.get('/', (req, res) => {
       attributes: [
           'id',
           'make',
-          'mode',
+          'model',
           'price',
           'type'
       ],

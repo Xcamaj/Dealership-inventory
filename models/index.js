@@ -6,20 +6,20 @@ const UsedCars = require('./Used')
 // associations
 
 User.hasMany(UsedCars, {
-    foreignKey: 'User_id'
+    foreignKey: 'user_id'
 });
 
 User.hasMany(NewCars, {
-    foreignKey: 'User_id'
+    foreignKey: 'user_id'
 });
 
 UsedCars.belongsTo(User, {
-    foreignKey: 'User_id',
+    foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
 
 NewCars.belongsTo(User, {
-    foreignKey: 'User_id',
+    foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
 
