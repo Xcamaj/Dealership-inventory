@@ -30,7 +30,7 @@ NewCars.init(
         User_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'User',
+                model: 'user',
                 key: 'id'
             }
         }
