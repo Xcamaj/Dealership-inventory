@@ -58,15 +58,16 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.post('/', withAuth, (req, res) => {
+//withauth
+router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   NewCars.create({
     make: req.body.make,
     model: req.body.model,
     price: req.body.price,
     type: req.body.type,
-    user_id: req.session.user_id
+    //req.session.user_id production
+    user_id: req.body.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -74,8 +75,8 @@ router.post('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.put('/:id', withAuth, (req, res) => {
+//withauth
+router.put('/:id', (req, res) => {
   NewCars.update(
     {
         make: req.body.make,
@@ -101,8 +102,8 @@ router.put('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.delete('/:id', withAuth, (req, res) => {
+//withauth
+router.delete('/:id', (req, res) => {
   console.log('id', req.params.id);
   NewCars.destroy({
     where: {

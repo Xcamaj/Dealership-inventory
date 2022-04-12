@@ -58,15 +58,16 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-  
-  router.post('/', withAuth, (req, res) => {
+  //with auth
+  router.post('/', (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
     UsedCars.create({
       make: req.body.make,
       model: req.body.model,
       price: req.body.price,
       type: req.body.type,
-      user_id: req.session.user_id
+      //req.session.user_id FOR PRODUCTION
+      user_id: req.body.user_id
     })
       .then(dbPostData => res.json(dbPostData))
       .catch(err => {
@@ -74,8 +75,8 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
-  
-  router.put('/:id', withAuth, (req, res) => {
+  //withauth
+  router.put('/:id', (req, res) => {
     UsedCars.update(
       {
           make: req.body.make,
@@ -102,7 +103,7 @@ router.get('/', (req, res) => {
       });
   });
   
-  router.delete('/:id', withAuth, (req, res) => {
+  router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
     UsedCars.destroy({
       where: {
