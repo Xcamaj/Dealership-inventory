@@ -117,10 +117,10 @@
     line-height: 150%;
   }
   
-  .post span {
-    text-decoration: none;
+  .post .make span {
+    font-style: italic;
     font-size: 90%;
-    color: blue;
+    color: #7d7d7d;
   }
   
   .edit-link {

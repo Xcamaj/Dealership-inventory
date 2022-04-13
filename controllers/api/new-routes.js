@@ -1,17 +1,17 @@
 const router = require('express').Router();
 const { NewCars, User } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // get all users (new)
 router.get('/', (req, res) => {
   console.log('======================');
   NewCars.findAll({
     attributes: [
-        'id',
-        'make',
-        'model',
-        'price',
-        'type'
+      'id',
+      'make',
+      'model',
+      'price',
+      'type'
     ],
     include: [
       {
@@ -33,11 +33,11 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-        'id',
-        'make',
-        'model',
-        'price',
-        'type'
+      'id',
+      'make',
+      'model',
+      'price',
+      'type'
     ],
     include: [
       {
@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-//withauth
+
 router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   NewCars.create({
@@ -66,7 +66,6 @@ router.post('/', (req, res) => {
     model: req.body.model,
     price: req.body.price,
     type: req.body.type,
-    //req.session.user_id production
     user_id: req.body.user_id
   })
     .then(dbPostData => res.json(dbPostData))
@@ -75,14 +74,14 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-//withauth
+
 router.put('/:id', (req, res) => {
   NewCars.update(
     {
-        make: req.body.make,
-        model: req.body.model,
-        price: req.body.price,
-        type: req.body.type
+      make: req.body.make,
+      model: req.body.model,
+      price: req.body.price,
+      type: req.body.type
     },
     {
       where: {
@@ -102,7 +101,7 @@ router.put('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-//withauth
+
 router.delete('/:id', (req, res) => {
   console.log('id', req.params.id);
   NewCars.destroy({
@@ -124,3 +123,17 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,28 @@
-<section>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealership Inventory</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Dealership Inventory</a>
+      </h1>
+      <nav>
+        <a href="/newcars">New Cars</a>
+        <a href="/usedcars">Used Cars</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        <a href="/login">login</a>
+      </nav>
+    </header>
+    <main>
+        <section>
             <h2>Add New Car</h2>
           
             <form class="new-car-form">
@@ -18,18 +42,14 @@
                 <label for="post-new-type">Type</label>
                 <input id="post-new-type" name="post-new-type" />
               </div>
-              <div>
-                <label for="post-new-user_id">user_id</label>
-                <input id="post-new-iser_id" name="post-new-user_id" />
-              </div>
               <button type="submit" class="btn">Post</button>
             </form>
           </section>
-          <section>
 
+          <section>
             <h2>Add Used Car</h2>
           
-            <form class="used-car-form">
+            <form class="new-used-form">
               <div>
                 <label for="post-used-make">Make</label>
                 <input type="text" id="post-used-make" name="post-used-make" />
@@ -46,11 +66,15 @@
                 <label for="post-used-type">Type</label>
                 <input id="post-used-type" name="post-used-type" />
               </div>
-              <div>
-                <label for="post-used-user_id">user_id</label>
-                <input id="post-used-iser_id" name="post-used-user_id" />
-              </div>
               <button type="submit" class="btn">Post</button>
             </form>
           </section>
-          <script src="./js/addCar.js"></script>
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+  <script src="/javascript/logout.js"></script>
+</body>
+
+</html>
