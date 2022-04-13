@@ -1,0 +1,49 @@
+{{> post-info post}}
+
+{{#if loggedIn}}
+<form class="usedcar-form">
+  <div>
+    <textarea name="usedcar-body"></textarea>
+  </div>
+
+  <div>
+        <a href="/usedcars">Used Cars</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        <a href="/login">login</a>
+      </nav>
+    </header>
+    <main>
+        <ol class="post-list">
+          <li>
+            <article class="post">
+                <div class="make">
+                  <p>Make:</p>
+                  <span>({{ post_make }})</span>
+                </div>
+                <div class="make">
+                    <p>Model:</p>
+                    <span>({{ post_model }})</span>
+                </div>
+                <div class="price">
+                    <p>Price:</p>
+                    <span>({{ post_price }})</span>
+                </div>
+                <div class="type">
+                    <p>Type:</p>
+                    <span>({{ post_type }})</span>
+                </div>
+                <div class="meta">
+                    {{user.username}} on {{format_date created_at}}
+                  </div>
+              </article>
+          </li>
+  </div>
+</form>
+{{/if}}
+
+{{> usedcar post.usedcar}}
+
+{{#if loggedIn}}
+<script src="/javascript/usedcart.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}
