@@ -1,38 +1,38 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
-// const { NewCars, UsedCars, User } = require('../models');
+const sequelize = require('../config/connection');
+const { NewCars, UsedCars, User } = require('../models');
 
 // get all posts for homepage (NewCars)
-// router.get('/', (req, res) => {
-//   console.log('======================');
-//   NewCars.findAll({
-//     attributes: [
-//         'id',
-//         'make',
-//         'model',
-//         'price',
-//         'type'
-//     ],
-//     include: [
-//       {
-//         model: User,
-//         attributes: ['username']
-//       }
-//     ]
-//   })
-//     .then(dbPostData => {
-//       const posts = dbPostData.map(post => post.get({ plain: true }));
+router.get('/newcars', (req, res) => {
+  console.log('======================');
+  NewCars.findAll({
+    attributes: [
+        'id',
+        'make',
+        'model',
+        'price',
+        'type'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
 
-//       res.render('homepage', {
-//         posts,
-//         loggedIn: req.session.loggedIn
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+      res.render('newcars', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // // get single post
 // router.get('/NewCars/:id', (req, res) => {
@@ -73,37 +73,37 @@ const router = require('express').Router();
 //     });
 // });
 
-// //USED CARS
-// router.get('/', (req, res) => {
-//     console.log('======================');
-//     UsedCars.findAll({
-//       attributes: [
-//           'id',
-//           'make',
-//           'model',
-//           'price',
-//           'type'
-//       ],
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username']
-//         }
-//       ]
-//     })
-//       .then(dbPostData => {
-//         const posts = dbPostData.map(post => post.get({ plain: true }));
+//USED CARS
+router.get('/usedcars', (req, res) => {
+    console.log('======================');
+    UsedCars.findAll({
+      attributes: [
+          'id',
+          'make',
+          'model',
+          'price',
+          'type'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    })
+      .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
   
-//         res.render('homepage', {
-//           posts,
-//           loggedIn: req.session.loggedIn
-//         });
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
+        res.render('usedcars', {
+          posts,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
   
 //   // get single post
 //   router.get('/UsedCars/:id', (req, res) => {
@@ -157,12 +157,12 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/newcars', (req, res) => {
-  res.render('newcars');
-});
+// router.get('/newcars', (req, res) => {
+//   res.render('newcars');
+// });
 
-router.get('/usedcars', (req, res) => {
-  res.render('usedcars');
-});
+// router.get('/usedcars', (req, res) => {
+//   res.render('usedcars');
+// });
 
 module.exports = router;
