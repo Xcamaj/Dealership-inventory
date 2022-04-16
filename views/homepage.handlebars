@@ -1,56 +1,17 @@
-<section>
-            <h2>Add New Car</h2>
-          
-            <form class="new-car-form">
-              <div>
-                <label for="post-new-make">Make</label>
-                <input type="text" id="post-new-make" name="post-new-make" />
-              </div>
-              <div>
-                <label for="post-new-model">Model</label>
-                <input id="post-new-model" name="post-new-model" />
-              </div>
-              <div>
-                <label for="post-new-price">Price</label>
-                <input id="post-new-price" name="post-new-price" />
-              </div>
-              <div>
-                <label for="post-new-type">Type</label>
-                <input id="post-new-type" name="post-new-type" />
-              </div>
-              <div>
-                <label for="post-new-user_id">user_id</label>
-                <input id="post-new-iser_id" name="post-new-user_id" />
-              </div>
-              <button type="submit" class="btn">Post</button>
-            </form>
-          </section>
-          <section>
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> newcars-info post }}
+  </li>
+  {{/each}}
+</ol>
 
-            <h2>Add Used Car</h2>
-          
-            <form class="used-car-form">
-              <div>
-                <label for="post-used-make">Make</label>
-                <input type="text" id="post-used-make" name="post-used-make" />
-              </div>
-              <div>
-                <label for="post-used-model">Model</label>
-                <input id="post-used-model" name="post-used-model" />
-              </div>
-              <div>
-                <label for="post-used-price">Price</label>
-                <input id="post-used-price" name="post-used-price" />
-              </div>
-              <div>
-                <label for="post-used-type">Type</label>
-                <input id="post-used-type" name="post-used-type" />
-              </div>
-              <div>
-                <label for="post-used-user_id">user_id</label>
-                <input id="post-used-iser_id" name="post-used-user_id" />
-              </div>
-              <button type="submit" class="btn">Post</button>
-            </form>
-          </section>
-          <script src="./js/addCar.js"></script>
+<hr>
+
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> usedcars-info post }}
+  </li>
+  {{/each}}
+</ol>

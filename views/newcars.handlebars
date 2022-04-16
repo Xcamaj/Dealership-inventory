@@ -1,7 +1,30 @@
-<ol class="post-list">
-    {{#each posts as |post|}}
-  <li>
-    {{> newcars-info post }}
-  </li>
-  {{/each}}
-</ol>
+{{> newcars-info post}}
+
+{{#if loggedIn}}
+            <h2>Add New Car</h2>
+          
+            <form class="new-car-form">
+              <div>
+                <label for="post-new-make">Make</label>
+                <input type="text" id="post-new-make" name="post-new-make" />
+              </div>
+              <div>
+                <label for="post-new-model">Model</label>
+                <input id="post-new-model" name="post-new-model" />
+              </div>
+              <div>
+                <label for="post-new-price">Price</label>
+                <input id="post-new-price" name="post-new-price" />
+              </div>
+              <div>
+                <label for="post-new-type">Type</label>
+                <input id="post-new-type" name="post-new-type" />
+              </div>
+              <div>
+                <label for="post-new-user_id">user_id</label>
+                <input id="post-new-iser_id" name="post-new-user_id" />
+              </div>
+              <button type="submit" class="btn">Post</button>
+            </form>
+
+{{/if}}
