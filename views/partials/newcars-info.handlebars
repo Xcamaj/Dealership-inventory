@@ -1,21 +1,11 @@
+<div class="display">
 <article class="post">
-                <div class="make">
-                  <p>Make:</p>
-                  <span>{{ make }}</span>
-                </div>
-                <div class="model">
-                    <p>Model:</p>
-                    <span>{{ model }}</span>
-                </div>
-                <div class="price">
-                    <p>Price:</p>
-                    <span>{{ price }}</span>
-                </div>
-                <div class="type">
-                    <p>Type:</p>
-                    <span>{{ type }}</span>
-                </div>
-                <div class="meta">
-                    {{user.username}} on {{ created_at}}
-                  </div>
-              </article>
+    <div class="new">
+        <p>Make: <span> {{ make }}</span></p>
+        <p>Model: <span> {{ model }}</span></p>
+        <p>Price: <span> {{ price }}</span></p>
+        <p>Type: <span> {{ type }}</span></p>
+            {{user.username}}  {{ created_at}}
+    </div>
+</article>
+</div>
