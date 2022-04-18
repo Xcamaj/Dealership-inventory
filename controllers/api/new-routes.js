@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { NewCars, User } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // get all users (new)
 router.get('/', (req, res) => {
@@ -60,7 +60,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   NewCars.create({
     make: req.body.make,
     model: req.body.model,
@@ -75,7 +74,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id',  (req, res) => {
   NewCars.update(
     {
       make: req.body.make,
