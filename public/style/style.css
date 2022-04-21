@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #006f9d;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+a:hover {
+    color: #3486eb;
+}
+
+p {
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+button {
+    border: 0;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #00e6ee;
+}
+
+.post-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+}
+
+.post-form {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+
+textarea,
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #3486eb;
+    margin-bottom: 10px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+    border: 1px solid #225ca3;
+    background-color: #00e6ee;
+}
+
+textarea {
+    min-width: 40%;
+    min-height: 100px;
+}
+
+form>div {
+    margin-bottom: 2%;
+}
+
+form label {
+    display: block;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1%;
+}
+
+main {
+    flex: 1;
+    padding: 2% 4%;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #225ca3;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+}
+
+.btn-no-style:hover {
+    background: none;
+    color: #3486eb;
+}
+
+.list-post {
+    display: flex;
+}
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto 30px auto;
+}
+
+.new {
+    margin: 40px;
+    padding: 10px;
+    background: #012881;
+    color: #00e6ee;
+    flex: 0 0 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.post span {
+    text-decoration: none;
+    font-size: 90%;
+    color: #00e6ee;
+}
